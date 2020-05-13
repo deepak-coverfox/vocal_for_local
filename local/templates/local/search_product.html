@@ -1,0 +1,27 @@
+{% extends "local/base.html" %}
+{% block body %}
+  <form action="" method="POST">
+    {% csrf_token %}
+    {% include 'local/tweak.html' with form=form %}
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+  <br/>
+  {% if products %}
+    {% for product in products %}
+      <p> 
+        {% if products.count > 1 %} 
+            <b>{{forloop.counter}} . </b>
+        {% endif %}
+        {% if product.is_indian %}
+          <b>{{ product.name }} in category <i><u>{{ product.category }}</i></u> is an Indian Product </b>
+          <span class="glyphicon glyphicon-ok" aria-hidden="true" style="color:rgb(41, 223, 65)"></span>
+        {% else %}
+            <b>{{ product.name }} in category <i><u>{{ product.category }}</i></u> is not an Indian Product  </b>
+            <span class="glyphicon glyphicon-remove" aria-hidden="true" style="color:rgb(243, 34, 34)"></span>
+        {% endif %}
+        </p>
+    {% endfor %}
+  {% elif is_clicked and not products %}
+      <p><b>This product is not found. Please check the name again and try.</b></p>
+  {% endif %}
+{% endblock %}

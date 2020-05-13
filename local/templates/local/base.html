@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+    <meta name="viewport", content="width=device-width, initial-scale=1.0">
+    {% block head %}
+    <title>Buy Local</title>
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="{% url 'local:home' %}" title="search-product" style="padding-left:30px">Home</a></li>
+            <li><a href="{% url 'local:search_product' %}" title="search-product" style="padding-left:30px">Search Product</a></li>
+            <li><a href="{% url 'local:browse_category' %}" title="browse_category" style="padding-left:30px">Browse by Category</a></li>   
+          </ul>
+          <ul class="nav navbar-nav navbar-right">  
+            <li><a href="{% url 'local:modify_product' %}" title="modify-product" style="padding-left:30px">Add Product</a></li>   
+            <li><a href="{% url 'local:modify_category' %}" title="modify-category" style="padding-left:30px">Add Category</a></li>   
+          </ul>
+      </div>
+    </div>
+  </nav>
+{% block body %}
+<div class="jumbotron">
+    <h1>Atmanirbhar Bharat</h1>
+    <p>The coronavirus crisis has taught us the importance of local manufacturing, market and supply chain.</p>
+    <p>Local helped us through the crisis, helped us survive. We have to make local our motto.</p>
+    <p>Now it's our turn to help our local manufacturers to help them boost our economy.</p>
+    <p>Global brands began locally. But when their people started marketing, branding and praising, 
+        <br>they became global. Every Indian should become vocal for local.</p>
+    <p>This website will help you distinguish between Indian and imported products.</p>
+    <p> Don't just buy, but promote.</p>
+    <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
+  </div>
+{% endblock %}
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</html>

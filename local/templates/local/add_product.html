@@ -1,0 +1,9 @@
+{% extends "local/base.html" %}
+{% block body %}
+  <form action="" method="POST">
+    {% csrf_token %}
+    <!-- {{form}} -->
+    {% include 'local/tweak.html' with form=form %}
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+{% endblock %}
